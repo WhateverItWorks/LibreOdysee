@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"codeberg.org/librarian/librarian/data"
+	"github.com/WhateverItWorks/LibreOdysee/data"
 	"github.com/PuerkitoBio/goquery"
 	"github.com/microcosm-cc/bluemonday"
 	"github.com/spf13/viper"
