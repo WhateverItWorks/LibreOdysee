@@ -10,11 +10,11 @@ import (
 	"strings"
 	"time"
 
-	"codeberg.org/librarian/librarian/api"
-	"codeberg.org/librarian/librarian/pages"
-	"codeberg.org/librarian/librarian/proxy"
-	"codeberg.org/librarian/librarian/static"
-	"codeberg.org/librarian/librarian/views"
+	"github.com/LibreOdysee/api"
+	"github.com/LibreOdysee/pages"
+	"github.com/LibreOdysee/proxy"
+	"github.com/LibreOdysee/static"
+	"github.com/LibreOdysee/views"
 	"github.com/aymerick/raymond"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/etag"
@@ -28,8 +28,8 @@ import (
 func main() {
 	viper.SetConfigName("config")
 	viper.SetConfigType("yml")
-	viper.AddConfigPath("/etc/librarian/")
-	viper.AddConfigPath("$HOME/.config/librarian")
+	viper.AddConfigPath("/etc/LibreOdysee/")
+	viper.AddConfigPath("$HOME/.config/LibreOdysee")
 	viper.AddConfigPath(".")
 	viper.AutomaticEnv()
 
