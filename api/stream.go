@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"codeberg.org/librarian/librarian/utils"
+	"github.com/WhateverItWorks/LibreOdysee/utils"
 	"github.com/patrickmn/go-cache"
 	"github.com/spf13/viper"
 )
@@ -80,7 +80,7 @@ func checkStream(url string) (Stream, error) {
 	req.Header.Set("Origin", "https://odysee.com")
 	req.Header.Set("Sec-Fetch-Dest", "empty")
 	req.Header.Set("Sec-Fetch-Mode", "cors")
-	req.Header.Set("Sec-Fetch-Site", "same-site")
+	req.Header.Set("Sec-Fetch-Site", "strict")
 	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/109.0")
 
 	res, err := http.DefaultClient.Do(req)
