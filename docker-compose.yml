@@ -1,11 +1,20 @@
-version: '3'
+version: '3.7'
 
 services:
-  librarian:
-    #build: . # Uncomment to build from source
-    image: codeberg.org/librarian/librarian:latest
+  libreodysee:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: libreodysee
+    hostname: libreodysee
+    restart: always
+    user: 65534:65534
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
     ports:
-      - 3000:3000
+      - '127.0.0.1:3245:3000'
     volumes:
       - ./data/config.yml:/app/config.yml
-    restart: unless-stopped
