@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  librarian:
+    #build: . # Uncomment to build from source
+    image: codeberg.org/librarian/librarian:latest
+    ports:
+      - 3000:3000
+    volumes:
+      - ./data/config.yml:/app/config.yml
+    restart: unless-stopped
