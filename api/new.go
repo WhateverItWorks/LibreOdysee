@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"strings"
 
-	"codeberg.org/librarian/librarian/utils"
+	"github.com/WhateverItWorks/LibreOdysee/utils"
 	"github.com/tidwall/gjson"
 )
 
