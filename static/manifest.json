@@ -1,6 +1,6 @@
 {
-    "name": "Librarian",
-    "short_name": "Librarian",
+    "name": "LibreOdysee",
+    "short_name": "LibreOdysee",
     "icons": [
         {
             "src": "/static/favicon/android-chrome-192x192.png",
