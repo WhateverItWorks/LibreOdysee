@@ -116,13 +116,13 @@ Open an issue to have your instance listed here!
 ### Automatically redirect links
 
 #### LibRedirect
-Use [LibRedirect](https://github.com/libredirect/libredirect) to automatically redirect Odysee links to Librarian! This needs to be enabled in settings.
+Use [LibRedirect](https://github.com/libredirect/libredirect) to automatically redirect Odysee links to LibreOdysee! This needs to be enabled in settings.
 - [Firefox](https://addons.mozilla.org/firefox/addon/libredirect/)
 - [Chromium-based browsers (Brave, Google Chrome)](https://github.com/libredirect/libredirect#install-in-chromium-brave-and-chrome)
 - [Edge](https://microsoftedge.microsoft.com/addons/detail/libredirect/aodffkeankebfonljgbcfbbaljopcpdb)
 
 #### GreaseMonkey script
-There is a script to redirect Odysee links to Librarian.
+There is a script to redirect Odysee links to LibreOdysee.
 https://github.com/WhateverItWorks/LibreOdysee-Redirects
 
 ### Install
