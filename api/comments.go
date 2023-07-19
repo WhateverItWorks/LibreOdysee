@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"codeberg.org/librarian/librarian/utils"
+	"github.com/WhateverItWorks/LibreOdysee/utils"
 	"github.com/dustin/go-humanize"
 	"github.com/gofiber/fiber/v2"
 	"github.com/patrickmn/go-cache"
