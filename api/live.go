@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"codeberg.org/librarian/librarian/utils"
+	"github.com/WhateverItWorks/LibreOdysee/utils"
 	"github.com/dustin/go-humanize"
 )
 
