@@ -1,0 +1,5 @@
+{
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/woodpecker-ci/woodpecker/master/pipeline/schema/schema.json": "file:///home/user/Documents/Projects/LibreOdysee/LibreOdysee/.woodpecker/.build.yml"
+  }
+}
