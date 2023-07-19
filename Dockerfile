@@ -1,20 +1,13 @@
-FROM --platform=$BUILDPLATFORM docker.io/library/golang:alpine AS build
-
-ARG TARGETARCH
-
+# Golang docker: https://hub.docker.com/_/golang
+FROM golang:1.20.5-alpine
+RUN apk add musl-dev
+RUN apk add libc-dev
+RUN apk add gcc
 WORKDIR /src
-RUN apk --no-cache add git ca-certificates
-RUN git clone https://codeberg.org/librarian/librarian .
-
+COPY go.mod ./
+COPY go.sum ./
 RUN go mod download
-RUN GOOS=linux GOARCH=$TARGETARCH CGO_ENABLED=0 go build -ldflags "-X codeberg.org/librarian/librarian/pages.VersionInfo=$(date '+%Y-%m-%d')-$(git rev-list --abbrev-commit -1 HEAD)" -o /src/librarian
-
-FROM scratch as bin
-
-WORKDIR /app
-COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-COPY --from=build /src/librarian .
-
+COPY ./ /app
+RUN go build -o /LibreOdysee
 EXPOSE 3000
-
-CMD ["/app/librarian"]
+CMD ["/app/LibreOdysee"]
