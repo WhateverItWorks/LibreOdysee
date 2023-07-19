@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"codeberg.org/librarian/librarian/utils"
+	"github.com/WhateverItWorks/LibreOdysee/utils"
 	"github.com/microcosm-cc/bluemonday"
 	"github.com/patrickmn/go-cache"
 	"github.com/spf13/viper"
