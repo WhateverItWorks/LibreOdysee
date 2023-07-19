@@ -4,7 +4,8 @@ FIBER_PREFORK: false
 ADDRESS: '0.0.0.0'
 API_URL: 'https://api.na-backend.odysee.com/api/v1/proxy'
 BLOCKED_CLAIMS: 
-  - claimId
+  - changethis1
+  - changethis2
 # AUTH_TOKEN and HMAC_KEY is automatically generated
 AUTH_TOKEN: ''
 HMAC_KEY: ''
