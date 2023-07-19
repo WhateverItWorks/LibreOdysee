@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"codeberg.org/librarian/librarian/utils"
+	"github.com/WhateverItWorks/LibreOdysee/utils"
 	"github.com/gofiber/fiber/v2"
 	"github.com/spf13/viper"
 )
