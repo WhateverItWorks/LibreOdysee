@@ -37,7 +37,7 @@ func Request(url string, byteLimit int64, dataArr ...Data) ([]byte, error) {
 	req.Header.Set("Origin", "https://odysee.com")
 	req.Header.Set("Sec-Fetch-Dest", "empty")
 	req.Header.Set("Sec-Fetch-Mode", "cors")
-	req.Header.Set("Sec-Fetch-Site", "same-site")
+	req.Header.Set("Sec-Fetch-Site", "strict")
 	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/109.0")
 
 	res, err := client.Do(req)
@@ -86,7 +86,7 @@ func SetDefaultHeaders(req http.Request) (http.Request) {
 	req.Header.Set("Origin", "https://odysee.com")
 	req.Header.Set("Sec-Fetch-Dest", "empty")
 	req.Header.Set("Sec-Fetch-Mode", "cors")
-	req.Header.Set("Sec-Fetch-Site", "same-site")
+	req.Header.Set("Sec-Fetch-Site", "strict")
 	req.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; rv:109.0) Gecko/20100101 Firefox/109.0")
 	return req
 }
