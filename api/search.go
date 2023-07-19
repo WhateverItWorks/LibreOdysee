@@ -7,7 +7,7 @@ import (
 	"strings"
 	"sync"
 
-	"codeberg.org/librarian/librarian/utils"
+	"github.com/WhateverItWorks/LibreOdysee/utils"
 	"github.com/tidwall/gjson"
 )
 
