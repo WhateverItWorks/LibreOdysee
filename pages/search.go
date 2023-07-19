@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strconv"
 
-	"codeberg.org/librarian/librarian/api"
+	"github.com/WhateverItWorks/LibreOdysee/api"
 	"github.com/gofiber/fiber/v2"
 	"github.com/spf13/viper"
 )
