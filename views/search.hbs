@@ -6,7 +6,7 @@
 
   <link rel="stylesheet" href="/static/css/search.css" />
 
-  <title>{{query.query}} - Librarian</title>
+  <title>{{query.query}} - LibreOdysee</title>
 </head>
 
 <body>
@@ -36,13 +36,13 @@
       <form action="/search" method="POST">
         <input type="hidden" name="q" value="{{query.query}}"/>
         <input type="hidden" name="page" value="{{query.prevPage}}"/>
-        <button class="nextBtn claimLink">Previous page</button>
+        <button class="nextBtn claimLink">Previous Page</button>
       </form>
       {{/unless}}
       <form action="/search" method="POST">
         <input type="hidden" name="q" value="{{query.query}}"/>
         <input type="hidden" name="page" value="{{query.nextPage}}"/>
-        <button class="nextBtn claimLink">Next page</button>
+        <button class="nextBtn claimLink">Next Page</button>
       </form>
     </div>
     {{/if}}
