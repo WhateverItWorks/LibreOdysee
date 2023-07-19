@@ -14,7 +14,7 @@ require (
 	github.com/microcosm-cc/bluemonday v1.0.23
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/pelletier/go-toml v1.9.5 // indirect
-	github.com/spf13/viper v1.15.0
+	github.com/spf13/viper v1.16.0
 	github.com/tidwall/gjson v1.14.4
 	github.com/yuin/goldmark v1.5.4
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
