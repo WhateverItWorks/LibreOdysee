@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> 'partials/head' }}
+
+  <link rel="stylesheet" href="/static/css/plyr.css" />
+  <link rel="stylesheet" href="/static/css/embed.css" />
+</head>
+
+<body>
+  {{> 'partials/videoPlayer' }}
+
+  <script src="/static/js/plyr.js"></script>
+  {{#if stream.HLS}}
+  <script src="/static/js/hls.light.min.js"></script>
+  <script src="/static/js/plyr-hls.js"></script>
+  {{else}}
+  <script src="/static/js/player.js"></script>
+  {{/if}}
+</body>
+
+</html>

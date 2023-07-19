@@ -1,0 +1,44 @@
+<div class="video">
+  <div class="thumbnailWrapper">
+    {{#equal this.ValueType "stream"}}
+    <a href={{this.RelUrl}}>
+      <img class="thumbnail" src="{{this.ThumbnailUrl}}&w=480" loading="lazy" />
+    </a>
+    {{/equal}}
+    {{#equal this.ValueType "channel"}}
+    <a href={{this.RelUrl}}>
+      {{#if this.Thumbnail}}
+      <img class="thumbnail channelThumbnail" src="{{this.Thumbnail}}&w=400" loading="lazy" />
+      {{else}}
+      <img src="/static/img/default-profile.svg" class="thumbnail channelThumbnail pfp--default" width="420" height="420"
+        loading="lazy" />
+      {{/if}}
+    </a>
+    {{/equal}}
+
+    {{#equal this.StreamType "video" }}
+    <p class="duration">{{this.Duration}}</p>
+    {{/equal}}
+  </div>
+  <p>
+    <a class="claimLink" href={{this.RelUrl}}>{{this.Title}}</a>
+  </p>
+  {{#equal this.ValueType "stream"}}
+  <p>
+    <a class="claimLink" href={{this.Channel.RelUrl}}>{{this.Channel.Name}}</a>
+  </p>
+  <div class="claimMeta">
+    <p title="{{this.Date}}">Shared {{this.RelTime}}</p>
+    <p>{{this.Views}} views</p>
+  </div>
+  {{/equal}}
+  {{#equal this.ValueType "channel"}}
+  <p>
+    <a class="claimLink" href={{this.RelUrl}}>{{this.Name}}</a>
+  </p>
+  <p>
+    {{this.Followers}} followers<br>
+    {{this.UploadCount}} uploads
+  </p>
+  {{/equal}}
+</div>

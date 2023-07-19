@@ -1,0 +1,19 @@
+<div class="videoDesc__channel">
+  {{#if Thumbnail}}
+  <img src="{{Thumbnail}}&w=56&h=56" class="pfp" width="56" height="56" loading="lazy" />
+  {{else}}
+  <img src="/static/img/default-profile.svg" class="pfp pfp--default" width="56" height="56" loading="lazy" />
+  {{/if}}
+  <p>
+    {{#if Name}}
+      {{#if Title}}
+      <b>{{Title}}</b><br>
+      {{Name}}
+      {{else}}
+      <b>{{Name}}</b>
+      {{/if}}
+    {{else}}
+      <b>[deleted]</b>
+    {{/if}}
+  </p>
+</div>

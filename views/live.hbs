@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> 'partials/head' }}
+
+  <meta name="thumbnail" content="{{config.DOMAIN}}{{live.ThumbnailUrl}}">
+  <meta name="description" content={{claim.DescriptionTxt}}>
+
+  <meta property="og:site_name" content="Librarian">
+  <meta property="og:url" content={{claim.Url}}>
+  <meta property="og:title" content={{claim.Title}}>
+  <meta property="og:image" content="{{config.DOMAIN}}{{live.ThumbnailUrl}}">
+  <meta property="og:description" content={{claim.DescriptionTxt}}>
+  <meta property="og:type" content="video.other">
+
+  <meta name="twitter:card" content="player">
+  <meta name="twitter:url" content={{claim.Url}}>
+  <meta name="twitter:title" content={{claim.Title}}>
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="{{config.DOMAIN}}{{claim.ThumbnailUrl}}">
+
+  <link rel="stylesheet" href="/static/css/plyr.css" />
+  <link rel="stylesheet" href="/static/css/video.css" />
+
+  <title>{{claim.Title}} - Librarian</title>
+</head>
+
+<body>
+  {{> 'partials/header' }}
+
+  <main>
+    <p class="jsonData" id="isLive">true</p>
+    {{#if live.Live}}
+    <div class="videoWrapper">
+      <video id="player" class="videoPlayer" poster="{{claim.ThumbnailUrl}}&w=1280&h=720" controls=true>
+        <source type="application/x-mpegurl" src="{{live.StreamUrl}}">
+      </video>
+    </div>
+    {{else}}
+    <p class="streamOffline">{{claim.Channel.Name}} isn't live right now. Check back later.</p>
+    {{/if}}
+
+    <noscript><br>⚠️ JavaScript is required to play livestreams.</noscript>
+    <h2>{{claim.Title}}</h2>
+
+    {{> 'partials/description' }}
+  </main>
+
+  {{> 'partials/footer' }}
+
+  <script src="/static/js/plyr.js"></script>
+  <script src="/static/js/hls.light.min.js"></script>
+  <script src="/static/js/plyr-hls.js"></script>
+</body>
+
+</html>

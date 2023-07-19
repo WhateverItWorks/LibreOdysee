@@ -1,0 +1,12 @@
+<div class="videoWrapper">
+  {{#if settings.autoplay}}
+  <video autoplay id="player" class="videoPlayer" poster="{{claim.ThumbnailUrl}}&w=1280&h=720" controls=true>
+  {{else}}
+  <video id="player" class="videoPlayer" poster="{{claim.ThumbnailUrl}}&w=1280&h=720" controls=true>
+  {{/if}}
+    <source type="{{stream.Type}}" src="{{stream.URL}}">
+    {{#if stream.HLS}}
+    <source type="video/mp4" src="{{stream.FallbackURL}}">    
+    {{/if}}
+  </video>
+</div>

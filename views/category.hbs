@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> 'partials/head' }}
+
+  <meta name="description" content="An alternative frontend for LBRY/Odysee.">
+
+  <meta property="og:site_name" content="Librarian">
+  <meta property="og:url" content="{{config.DOMAIN}}/">
+  <meta property="og:title" content="{{category.Name}}">
+  <meta property="og:image" content="{{config.DOMAIN}}/static/favicon/apple-touch-icon.png">
+  <meta property="og:description" content="An alternative frontend for LBRY/Odysee.">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="/static/css/category.css" />
+
+  <title>{{category.Name}} - Librarian</title>
+</head>
+
+<body>
+  {{> 'partials/header' }}
+
+  <main>
+    <div class="categoryBar">
+      {{#each categories}}
+      <a href="/$/{{this.Path}}" class="categoryLabel {{#equal this.Name category.Name}}categoryLabel--active{{/equal}}">{{this.Name}}</a>
+      {{/each}}
+    </div>
+    <div class="categoryItems">
+      <h2 class="sectionHeader">{{category.Name}}</h2>
+      <div class="claimsGrid">
+        {{#each claims}}
+        {{> 'partials/claim' }}
+        {{/each}}
+      </div>
+    </div>
+  </main>
+
+  {{> 'partials/footer' }}
+
+  <script src="/sw.js"></script>
+</body>
+
+</html>

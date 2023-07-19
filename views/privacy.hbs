@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> 'partials/head' }}
+
+  <link rel="stylesheet" href="/static/css/privacy.css">
+
+  <title>Instance privacy - Librarian</title>
+</head>
+
+<body>
+  {{> 'partials/header' }}
+
+  <main>
+    <h1>Instance Privacy</h1>
+    {{#if config.instance_privacy.privacy_policy}}
+    <p>The instance operator has indicated their instance's privacy practices below. For more information, see the
+      instance operator's <a href="{{config.instance_privacy.privacy_policy}}">privacy policy</a>.</p>
+    {{else}}
+    <p>The instance operator has indicated their instance's privacy practices below.</p>
+    {{/if}}
+
+    {{#if config.instance_privacy.message}}
+    <p>{{{config.instance_privacy.message}}}</p>
+    {{/if}}
+
+    {{#if config.instance_privacy.data_not_collected}}
+    <div class="badgeWrapper">
+      <div class="badge">
+        <span class="material-icons-outlined largeIcon">
+          check_circle
+        </span>
+        <h3>Data Not Collected</h3>
+        <p>The instance operator does not collect any data from this instance.</p>
+      </div>
+    </div>
+    {{/if}}
+
+    {{#unless config.instance_privacy}}
+    <div class="badgeWrapper">
+      <div class="badge">
+        <span class="material-icons-outlined largeIcon">
+          report_problem
+        </span>
+        <h3>No Details Provided</h3>
+        <p>The operator of this instance will be required to provide privacy details to be added to the instance list.
+        </p>
+      </div>
+    </div>
+    {{else}}
+    {{#unless config.instance_privacy.data_not_collected}}
+    <div class="badgeWrapper">
+      <div class="badge">
+        <span class="material-icons-outlined largeIcon">
+          error_outline
+        </span>
+        <h3>Data Collected</h3>
+        <p>The following data may be collected:</p>
+        <ul>
+          {{#if config.instance_privacy.data_collected_ip}}
+          <li>
+            <span class="material-icons-outlined">password</span>
+            Internet address (IP Address)
+          </li>
+          {{/if}}
+          {{#if config.instance_privacy.data_collected_url}}
+          <li>
+            <span class="material-icons-outlined">link</span>
+            Page viewed (Request URL)
+          </li>
+          {{/if}}
+          {{#if config.instance_privacy.data_collected_device}}
+          <li>
+            <span class="material-icons-outlined">phonelink</span>
+            Device Type (User agent)
+          </li>
+          {{/if}}
+          {{#if config.instance_privacy.data_collected_diagnostics}}
+          <li>
+            <span class="material-icons-outlined">settings</span>
+            Diagnostics
+          </li>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+    {{/unless}}
+    {{/unless}}
+
+    <details class="privacyDetails">
+      <summary>What's this?</summary>
+      <p>
+        Instance privacy aims to bring transparency to the data collected by frontends and encourage privacy friendly practices. There is often no privacy policy and users are forced to trust that the instance operator is not collecting data. However, there is a possibility that the instance operator can put false information so we encourage looking at other factors when selecting an instance.
+      </p>
+      <ul>
+        <li>
+          <span class="material-icons-outlined">password</span>
+          Internet address (IP Address) - This is an address that is given to your computer or internet connection.
+          This can be used to find your city or region and internet provider but can change depending on your connection.
+        </li>
+        <li>
+          <span class="material-icons-outlined">link</span>
+          Page viewed (Request URL) - This is what page you are viewing. Searches are kept private.
+        </li>
+        <li>
+          <span class="material-icons-outlined">phonelink</span>
+          Device Type (User agent) - This is what browser, device, and operating system you are using.
+          Advanced users can change this with an extension or browser setting.
+        </li>
+        <li>
+          <span class="material-icons-outlined">settings</span>
+          Diagnostics - When this data is only collected when there is an error or only a short amount of time while
+          diagnosing an issue.
+        </li>
+      </ul>
+    </details>
+
+    <h2>Additional information</h2>
+    <ul>
+      <li>Version: {{version}}</li>
+      <li>Country: {{config.instance_privacy.instance_country}}</li>
+      <li>Provider: {{config.instance_privacy.instance_provider}}</li>
+      {{#if config.instance_privacy.instance_cloudflare}}
+      <li>Using Cloudflare?: Yes</li>
+      {{else}}
+      <li>Using Cloudflare?: No</li>
+      {{/if}}
+      {{#if config.enable_stream_proxy}}
+      <li>Stream proxy: Yes</li>
+      {{else}}
+      <li>Stream proxy: No</li>
+      {{/if}}
+      {{#if config.enable_livestream}}
+      <li>Livestreams: Yes</li>
+      {{else}}
+      <li>Livestreams: No</li>
+      {{/if}}
+    </ul>
+  </main>
+
+  {{> 'partials/footer' }}
+
+  <script src="/sw.js"></script>
+</body>
+
+</html>

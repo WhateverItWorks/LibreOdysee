@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> 'partials/head' }}
+
+  <link rel="stylesheet" href="/static/css/article.css" />
+
+  <title>About - Librarian</title>
+</head>
+
+<body>
+  {{> 'partials/header' }}
+
+  <main>
+    <div class="warningBox">
+      <h3>Notice</h3>
+      <p>All content is from <a href="https://odysee.com/" rel="nofollow noreferrer">Odysee</a>. Librarian does not allow uploads or comments. Any issues with content should be reported to <a href="https://odysee.com/" rel="nofollow noreferrer">Odysee</a>.</p>
+    </div>
+
+    <h1>Librarian</h1>
+    <p>An alternative frontend for LBRY/Odysee, designed for speed and privacy. Inspired by <a href="https://github.com/iv-org/invidious">Invidious</a> and <a href="https://github.com/spikecodes/libreddit">Libreddit</a>.
+
+    <h2>Features</h2>
+
+    <ul>
+      <li>Lightweight</li>
+      <li>JavaScript not required*</li>
+      <li>No ads</li>
+      <li>No tracking</li>
+      <li>No crypto garbage</li>
+    </ul>
+
+    <p>* JavaScript is required to play livestreams except on Apple devices.</p>
+
+    <h2>Demo</h2>
+    <ul>
+      <li><a href="/@RetroMusic:d/1987-Rick-Astley-Never-Gonna-Give-You-Up-1920x1080:f">Video</a></li>
+      <li><a href="/@DistroTube:2">Channel</a></li>
+    </ul>
+
+    <h2>Comparison</h2>
+    <p>Comparing Librarian to Odysee.</p>
+
+    <h3>Speed</h3>
+    <p>Tested using <a href="https://pagespeed.web.dev/">Google PageSpeed Insights</a>.</p>
+
+    <table>
+      <tr>
+        <th></th>
+        <th><a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Flbry.bcow.xyz%2F">Librarian</a></th>
+        <th><a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fodysee.com%2F">Odysee</a></th>
+      </tr>
+      <tr>
+        <td>Performance</td>
+        <td>99</td>
+        <td>27</td>
+      </tr>
+      <tr>
+        <td>Request count</td>
+        <td>17</td>
+        <td>470</td>
+      </tr>
+      <tr>
+        <td>Resource Size</td>
+        <td>702 KiB</td>
+        <td>2,457 KiB</td>
+      </tr>
+      <tr>
+        <td>Time to Interactive</td>
+        <td>0.9s</td>
+        <td>18.4s</td>
+      </tr>
+    </table>
+
+    <h2>Privacy</h2>
+
+    <h3>Odysee</h3>
+    <p>Odysee has admitted to using browser fingerprinting for ads and loads multiple ads, trackers, and an annoying cookie banner.</p>
+    <blockquote>We and our partners process data to provide: Use precise geolocation data. Actively scan device characteristics for identification. Store and/or access information on a device. Personalised ads and content, ad and content measurement, audience insights and product development.</blockquote>
+    <p>They also use your data for these purposes and you cannot opt-out of it.</p>
+    <ul>
+      <li>Ensure security, prevent fraud, and debug</li>
+      <li>Technically deliver ads or content</li>
+      <li>Match and combine offline data sources</li>
+      <li>Link different devices</li>
+      <li>Receive and use automatically-sent device characteristics for identification</li>
+    </ul>
+
+    <p><b>Ads/trackers:</b> (as of Feb 1, 2022)</p>
+    <ul>
+      <li>Google</li>
+      <li>Vidcrunch</li>
+      <li>and many more listed on the list of partners in the cookie banner.</li>
+    </ul>
+
+    <p>And they have previously used:</p>
+    <ul>
+      <li>Traffic Junky (P***Hub)</li>
+      <li>Unruly Media</li>
+    </ul>
+
+    <h3>Librarian</h3>
+    <p>Privacy varies by instance. You can view a "privacy nutrition label" by clicking on the "Privacy" link at the bottom. The official <a href="https://lbry.bcow.xyz/privacy">lbry.bcow.xyz</a> instance collects some data for video streaming.</p>
+
+    <h2>LibRedirect</h2>
+    <p>You can use <a href="https://github.com/libredirect/libredirect">LibRedirect</a> to automatically redirect Odysee links to Librarian! This needs to be enabled in settings.</p>
+    <ul>
+      <li><a href="https://addons.mozilla.org/firefox/addon/libredirect/">Firefox</a></li>
+      <li><a href="https://github.com/libredirect/libredirect#install-in-chromium-brave-and-chrome">Chromium-based browsers (Brave, Google Chrome)</a></li>
+      <li><a href="https://microsoftedge.microsoft.com/addons/detail/libredirect/aodffkeankebfonljgbcfbbaljopcpdb">Edge</a></li>
+    </ul>
+  </main>
+
+  {{> 'partials/footer' }}
+</body>
+
+</html>

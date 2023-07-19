@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> 'partials/head' }}
+
+  <meta name="thumbnail" content="{{config.domain}}{{claim.ThumbnailUrl}}">
+  <meta name="description" content={{claim.DescriptionTxt}}>
+
+  <meta property="og:site_name" content="Librarian">
+  <meta property="og:url" content="{{claim.Url}}">
+  <meta property="og:title" content="{{claim.Title}}">
+  <meta property="og:image" content="{{config.domain}}{{claim.ThumbnailUrl}}">
+  <meta property="og:description" content="{{claim.DescriptionTxt}}">
+  {{#if document}}
+  <meta property="og:type" content="article">
+  {{else}}
+  <meta property="og:type" content="video.other">
+  {{/if}}
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="{{claim.Url}}">
+  <meta name="twitter:title" content="{{claim.Title}}">
+  <meta name="twitter:description" content="{{claim.DescriptionTxt}}">
+  <meta name="twitter:image" content="{{config.domain}}{{claim.ThumbnailUrl}}">
+
+  {{#if document}}
+  <link rel="stylesheet" href="/static/css/video.css" />
+  <link rel="stylesheet" href="/static/css/article.css" />
+  {{else}}
+  <link rel="stylesheet" href="/static/css/plyr.css" />
+  <link rel="stylesheet" href="/static/css/video.css" />
+  {{/if}}
+
+  <link rel="stylesheet" href="/static/css/comments.css" />
+
+  <p class="jsonData" id="commentData">
+    {"claimId": "{{claim.Id}}", "channelId": "{{claim.Channel.Id}}", "channelName": "{{claim.Channel.Name}}"}
+  </p>
+
+  <title>{{claim.Title}} - Librarian</title>
+</head>
+
+<body>
+  {{> 'partials/header' }}
+
+  <main>
+    {{#if download}}
+    <div class="dl">
+      <span class="material-icons-outlined largeIcon">
+        report_problem
+      </span>
+      <p>This file could not be displayed.</p>
+      <a href="{{stream.FallbackURL}}" rel="nofollow noreferrer" download="{{claim.Id}}.mp4"> 
+        <button class="btn">
+          <span class="material-icons-outlined">download</span>
+          Download
+        </button>
+      </a>
+    </div>
+    {{/if}}
+
+    {{#unless document}}
+    {{#unless download}}
+    {{> 'partials/videoPlayer' }}
+    {{/unless}}
+
+    <h2>{{claim.Title}}</h2>
+
+    <div class="videoData">
+      <div class="videoData__left">
+        {{> 'partials/description' }}
+
+        {{> 'partials/comments' }}
+      </div>
+
+      {{#unless document}}
+      {{> 'partials/relVids'}}
+      {{/unless}}
+    </div>
+    {{else}}
+
+    <h1 class="postTitle">{{claim.Title}}</h1>
+    <p><b>{{claim.Date}}</b></p>
+
+    {{> 'partials/claimMeta' }}
+
+    <article>
+      {{{document}}}
+    </article>
+
+    <p class="videoDesc__claimId">Claim ID: {{claim.Id}}</p>
+
+    {{> 'partials/comments' }}
+    {{/unless}}
+  </main>
+
+  {{> 'partials/footer' }}
+
+  {{#unless settings.nojs}}
+  <script src="/static/js/comments.js"></script>
+  {{#unless document}}
+  <script src="/static/js/plyr.js"></script>
+  {{#if stream.HLS}}
+  <script src="/static/js/hls.light.min.js"></script>
+  <script src="/static/js/plyr-hls.js"></script>
+  {{else}}
+  <script src="/static/js/player.js"></script>
+  {{/if}}
+  <script src="/static/js/sponsorblock.js"></script>
+  {{/unless}}
+  {{/unless}}
+</body>
+
+</html>

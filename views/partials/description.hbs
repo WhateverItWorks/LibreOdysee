@@ -1,0 +1,47 @@
+<div class="videoDesc">
+  {{> 'partials/claimMeta' }}
+  <div class="actionBar">
+    <a href="{{claim.OdyseeUrl}}" rel="nofollow noreferrer">
+      <button class="btn">
+        <span class="material-icons-outlined">open_in_new</span>
+        Odysee
+      </button>
+    </a>
+    <a href="https://librarian.codeberg.page/#{{claim.RelUrl}}" rel="nofollow noreferrer">
+      <button class="btn">
+        <span class="material-icons-outlined">switch_right</span>
+        Switch instance
+      </button>
+    </a>
+    {{#unless download}}
+    {{#unless live}}
+    <a href="{{stream.FallbackURL}}" rel="nofollow noreferrer">
+      <button class="btn">
+        <span class="material-icons-outlined">download</span>
+        Download
+      </button>
+    </a>
+    {{/unless}}
+    {{/unless}}
+  </div>
+  {{#if live.Live}}
+  <p>
+    <b>
+      Started streaming 
+      <span title="{{live.Time}}">{{live.RelTime}}</span>
+    </b>
+  </p>
+  {{else}}
+  <p><b>Shared {{claim.Date}}</b></p>
+  {{/if}}
+  <div>
+    {{#if claim.Description}}
+    <input id="expandBtn" type="checkbox">
+    <div class="description">{{{claim.Description}}}</div>
+    <label for="expandBtn">
+      <a></a>
+    </label>
+    {{/if}}
+  </div>
+  <p class="claimId">Claim ID: {{claim.Id}}</p>
+</div>

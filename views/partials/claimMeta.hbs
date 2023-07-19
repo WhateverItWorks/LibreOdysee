@@ -1,0 +1,21 @@
+<div class="videoDesc__data">
+  {{#with claim.Channel}}
+  <a href="{{claim.Channel.RelUrl}}">
+    {{> 'partials/channel' }}
+  </a>
+  {{/with}}
+  <div class="videoDesc__meta">
+    <div class="videoDesc__meta__item">
+      <span class="material-icons-outlined" title="Views">visibility</span>
+      <p>{{claim.Views}}</p>
+    </div>
+    <div class="videoDesc__meta__item">
+      <span class="material-icons-outlined" title="Likes">thumb_up</span>
+      <p>{{claim.Likes}}</p>
+    </div>
+    <div class="videoDesc__meta__item">
+      <span class="material-icons-outlined" title="Dislilkes">thumb_down</span>
+      <p>{{claim.Dislikes}}</p>
+    </div>
+  </div>
+</div>

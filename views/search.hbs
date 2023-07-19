@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> 'partials/head' }}
+
+  <link rel="stylesheet" href="/static/css/search.css" />
+
+  <title>{{query.query}} - Librarian</title>
+</head>
+
+<body>
+  {{> 'partials/header' }}
+
+  <main>
+    <div class="noResults">
+      {{#unless results}}
+      <h2>No results</h2>
+      {{#if lenUnder3}}
+      <p>Try again with a longer search.</p>
+      {{/if}}
+      {{/unless}}
+    </div>
+
+    <div class="claimsGrid">
+      {{#each results}}
+      {{> 'partials/claim' }}
+      {{/each}}
+    </div>
+
+    <br><br>
+
+    {{#if results}}
+    <div class="pageSelector">
+      {{#unless query.prevPageIs0 }}
+      <form action="/search" method="POST">
+        <input type="hidden" name="q" value="{{query.query}}"/>
+        <input type="hidden" name="page" value="{{query.prevPage}}"/>
+        <button class="nextBtn claimLink">Previous page</button>
+      </form>
+      {{/unless}}
+      <form action="/search" method="POST">
+        <input type="hidden" name="q" value="{{query.query}}"/>
+        <input type="hidden" name="page" value="{{query.nextPage}}"/>
+        <button class="nextBtn claimLink">Next page</button>
+      </form>
+    </div>
+    {{/if}}
+  </main>
+
+  {{> 'partials/footer' }}
+</body>
+
+</html>

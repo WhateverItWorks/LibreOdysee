@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="/static/js/urlHash.js"></script>
+  
+  {{> 'partials/head' }}
+
+  <meta name="thumbnail" content="{{config.DOMAIN}}{{channel.Thumbnail}}">
+  <meta name="description" content={{channel.DescriptionTxt}}>
+
+  <meta property="og:site_name" content="Librarian">
+  <meta property="og:url" content={{channel.Url}}>
+  <meta property="og:image" content="{{config.DOMAIN}}{{channel.Thumbnail}}">
+  <meta property="og:description" content={{channel.DescriptionTxt}}>
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="player">
+  <meta name="twitter:url" content={{channel.Url}}>
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="{{config.DOMAIN}}{{channel.Thumbnail}}">
+
+  {{#if channel.Title}}
+  <meta property="og:title" content={{channel.Title}}>
+  <meta name="twitter:title" content={{channel.Title}}>
+  {{else}}
+  <meta property="og:title" content={{channel.Name}}>
+  <meta name="twitter:title" content={{channel.Name}}>
+  {{/if}}
+
+  <link rel="alternate" type="application/rss+xml" title="{{channel.Title}} - Librarian" href="{{channel.Url}}/rss" />
+
+  <link rel="stylesheet" href="/static/css/channel.css" />
+
+  <title>
+    {{#if channel.Title}}
+    {{channel.Title}}
+    {{else}}
+    {{channel.Name}}
+    {{/if}}
+    - Librarian
+  </title>
+</head>
+
+<body>
+  {{> 'partials/header' }}
+
+  <main>
+    <div class="channelMeta">
+      {{#if channel.CoverImg}}
+      <img src="{{channel.CoverImg}}&w=1920&h=240" class="coverImg" loading="lazy" />
+      {{/if}}
+
+      <div class="videoDesc__data videoDesc__data--channel">
+        {{#with channel}}
+        {{> 'partials/channel' }}
+        {{/with}}
+        <div class="actionBar">
+          <a href="{{channel.OdyseeUrl}}" rel="nofollow noreferrer">
+            <div class="actionBar">
+              <button class="btn">
+                <span class="material-icons-outlined">open_in_new</span>
+                Odysee
+            </div>
+          </a>
+          <a href="https://librarian.codeberg.page/#{{channel.RelUrl}}" rel="nofollow noreferrer">
+            <button class="btn">
+              <span class="material-icons-outlined">switch_right</span>
+              Switch instance
+            </button>
+          </a>
+          <a href="{{channel.Url}}/rss" rel="nofollow noreferrer">
+            <button class="btn">
+              <span class="material-icons-outlined">rss_feed</span>
+              Subscribe | {{channel.Followers}} followers
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {{#if channel.Description}}
+    <div>
+      <input id="expandBtn" type="checkbox">
+      <div class="description">{{{channel.Description}}}</div>
+      <label for="expandBtn">
+        <a></a>
+      </label>
+    </div>
+    {{/if}}
+    
+    <p class="claimId">Claim ID: {{channel.Id}}</p>
+    </div>
+
+    <div class="claimsGrid">
+      {{#each claims}}
+      {{> 'partials/claim'}}
+      {{/each}}
+    </div>
+
+    <br><br>
+
+    <div class="pageSelector">
+      {{#unless query.prevPageIs0 }}
+      <a class="claimLink" href="{{channel.RelUrl}}?page={{query.prevPage}}">Previous page</a>
+      {{/unless}}
+      <a class="claimLink" href="{{channel.RelUrl}}?page={{query.nextPage}}">Next page</a>
+    </div>
+  </main>
+
+  {{> 'partials/footer' }}
+</body>
+
+</html>

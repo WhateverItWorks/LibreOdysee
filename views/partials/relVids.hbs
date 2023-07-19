@@ -1,0 +1,28 @@
+{{#if settings.showRelated}}
+<div class="videoData__right">
+  <div class="relVids">
+    {{#each relatedVids}}
+    {{#if this.Title}}
+    <div>
+      <div class="relVid__thumbnailWrapper">
+        <a href={{this.RelUrl}}>
+          <img class="relVid__thumbnail" src="{{this.ThumbnailUrl}}&w=400" loading="lazy" />
+        </a>
+        <p class="duration">{{this.Duration}}</p>
+      </div>
+      <p>
+        <a class="relVid__link" href={{this.RelUrl}}>{{this.Title}}</a>
+      </p>
+      <p>
+        <a class="relVid__link" href={{this.Channel.RelUrl}}>{{this.Channel.Name}}</a>
+      </p>
+      <div class="relVid__meta">
+        <p title="{{this.Date}}">Shared {{this.RelTime}}</p>
+        <p>{{this.Views}} views</p>
+      </div>
+    </div>
+    {{/if}}
+    {{/each}}
+  </div>
+</div>
+{{/if}}

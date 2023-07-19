@@ -1,0 +1,62 @@
+<div class="comments_wrapper">
+  <input id="comments__expandBtn" type="checkbox" checked>
+  <label class="comments__expandBtn__label" for="comments__expandBtn">
+    <div class="commentHeader">
+      <h3 id="commentsHeader">
+        Comments
+        {{#if settings.nojs}}
+        ({{comments.Items}})
+        {{/if}}
+      </h3>
+      <div class="sortBtns">
+        <button class="sortBtn sortBtn--warningActive sortBtn--active" id="bestSortBtn">Best</button>
+        <button class="sortBtn sortBtn--warningActive" id="controversialSortBtn">Controversial</button>
+        <button class="sortBtn sortBtn--warningActive" id="newSortBtn">New</button>
+      </div>
+    </div>
+    <span class="comments__expandBtn__icon material-icons-outlined"></span>
+  </label>
+  <div id="comments" class="comments">
+    {{#unless settings.nojs}}
+    <div class="comments__warning" id="commentsWarning">
+      <div class="comments__warning__msg">
+        <span class="material-icons-outlined largeIcon">
+          report_problem
+        </span>
+        <p>
+          Comments may contain harmful or inappropriate content.<br>
+          Are you sure you want to continue?
+        </p>
+      </div>
+      <a href="{{claim.RelUrl}}?nojs=1" id="commentWarningBtn">
+        <button class="comments__warning__btn">
+          Show comments
+        </button>
+      </a>
+    </div>
+    {{/unless}}
+    {{#if settings.nojs}}
+    {{#each comments.Comments}}
+    <div class="comment">
+      {{#with this.Channel}}
+      <a href="{{this.Channel.RelUrl}}">{{> 'partials/channel'}}</a>
+      {{/with}}
+      <div>
+        {{{this.Comment}}}
+        <p>
+          {{#if this.Pinned}}
+          <span class="material-icons-outlined">push_pin</span> Pinned |
+          {{/if}}
+          <span title="{{this.Time}}">{{this.RelTime}}</span> |
+          <span class="material-icons-outlined">thumb_up</span> {{this.Likes}}
+          <span class="material-icons-outlined">thumb_down</span> {{this.Dislikes}}
+        </p>
+      </div>
+    </div>
+    {{/each}}
+    {{/if}}
+  </div>
+  <div id="spinner" class="center">
+    <div class="spinner"></div>
+  </div>
+</div>

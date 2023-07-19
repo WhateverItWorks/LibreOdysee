@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {{> 'partials/head' }}
+
+  <link rel="stylesheet" href="/static/css/settings.css" />
+
+  <title>Settings - Librarian</title>
+</head>
+
+<body>
+  {{> 'partials/header' }}
+
+  <main>
+    <h2 class="sectionHeader">Settings</h2>
+    <noscript>Settings requires JavaScript.</noscript>
+
+    <div class="selectOpt">
+      <select id="theme" disabled>
+        <option value="system">System</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+      <p>Theme</p>
+    </div>
+    <div class="switchWrapper">
+      <label class="switch">
+        <input type="checkbox" id="showRelated" name="showRelated" disabled>
+        <span class="slider"></span>
+      </label>
+      <label for="showRelated">Show related videos</label>
+    </div>
+    <div class="switchWrapper">
+      <label class="switch">
+        <input type="checkbox" id="nsfw" name="nsfw" disabled>
+        <span class="slider"></span>
+      </label>
+      <label for="nsfw">Show NSFW</label>
+    </div>
+    <div class="switchWrapper">
+      <label class="switch">
+        <input type="checkbox" id="autoplay" name="autoplay" disabled>
+        <span class="slider"></span>
+      </label>
+      <label for="autoplay">Autoplay</label>
+    </div>
+    <div class="switchWrapper">
+      <label class="switch">
+        <input type="checkbox" id="commentWarning" name="commentWarning" disabled>
+        <span class="slider"></span>
+      </label>
+      <label for="commentWarning">Comment warning</label>
+    </div>
+
+    <h3>SponsorBlock</h3>
+    <p class="sbSectionText">Uses the <a href="https://sponsor.ajay.app/">SponsorBlock</a> API. Video IDs are kept private. Only works for YouTube synced videos.</p>
+
+    <div class="switchWrapper">
+      <label class="switch">
+        <input type="checkbox" id="sponsor" name="sponsor" disabled>
+        <span class="slider"></span>
+      </label>
+      <label for="sponsor">Sponsor</label>
+    </div>
+    <div class="switchWrapper">
+      <label class="switch">
+        <input type="checkbox" id="selfpromo" name="selfpromo" disabled>
+        <span class="slider"></span>
+      </label>
+      <label for="selfpromo">Unpaid/Self Promotion</label>
+    </div>
+    <div class="switchWrapper">
+      <label class="switch">
+        <input type="checkbox" id="interaction" name="interaction" disabled>
+        <span class="slider"></span>
+      </label>
+      <label for="interaction">Interaction Reminder (Subscribe)</label>
+    </div>
+    <div class="switchWrapper">
+      <label class="switch">
+        <input type="checkbox" id="intro" name="intro" disabled>
+        <span class="slider"></span>
+      </label>
+      <label for="intro">Intro</label>
+    </div>
+    <div class="switchWrapper">
+      <label class="switch">
+        <input type="checkbox" id="outro" name="outro" disabled>
+        <span class="slider"></span>
+      </label>
+      <label for="outro">Outro</label>
+    </div>
+    <div class="switchWrapper">
+      <label class="switch">
+        <input type="checkbox" id="preview" name="preview" disabled>
+        <span class="slider"></span>
+      </label>
+      <label for="preview">Preview/Recap</label>
+    </div>
+    <div class="switchWrapper">
+      <label class="switch">
+        <input type="checkbox" id="filler" name="filler" disabled>
+        <span class="slider"></span>
+      </label>
+      <label for="filler">Filler Tangent/Jokes</label>
+    </div>
+  </main>
+
+  {{> 'partials/footer' }}
+
+  <script src="/static/js/settings.js"></script>
+</body>
+
+</html>
