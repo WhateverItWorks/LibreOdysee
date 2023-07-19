@@ -1,10 +1,10 @@
 package pages
 
 import (
-	"codeberg.org/librarian/librarian/api"
-	"codeberg.org/librarian/librarian/utils"
+	"github.com/WhateverItWorks/LibreOdysee/api"
+	"github.com/WhateverItWorks/LibreOdysee/utils"
 	"github.com/gofiber/fiber/v2"
-	"codeberg.org/librarian/feeds"
+	"github.com/LibreOdysee/feeds"
 	"github.com/spf13/viper"
 )
 
