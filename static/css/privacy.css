@@ -1,0 +1,50 @@
+main {
+  margin: 0 24vw
+}
+
+ul {
+  list-style: outside none none;
+  padding: 0;
+  margin: 0.25em;
+  text-align: left;
+}
+
+.largeIcon {
+  font-size: 36px;
+  color: var(--accent);
+}
+
+.badgeWrapper {
+  margin: 0 10vw
+}
+
+.badge {
+  background-color: var(--bg-100);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25em;
+  padding: 1em;
+  text-align: center;
+}
+
+.badge h3,
+.badge p,
+.largeIcon {
+  margin: 0;
+}
+
+.privacyDetails summary {
+  cursor: pointer;
+  user-select: none;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 812px) {
+  .badgeWrapper,
+  main {
+    margin: 0
+  }
+}

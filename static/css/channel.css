@@ -1,0 +1,44 @@
+.channel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.channelMeta {
+  margin-bottom: 1em;
+}
+
+.coverImg {
+  object-fit: cover;
+  width: 100%;
+  height: 240px;
+}
+
+.description {
+  margin-top: -1em;
+}
+
+.description p {
+  margin: 0;
+}
+
+.claimsGrid {
+  margin-top: 1em;
+}
+
+.actionBar {
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 812px) {
+  .coverImg {
+    max-height: 72px;
+  }
+  .videoDesc__data--channel {
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
+    padding-bottom: 0.75em;
+  }
+}

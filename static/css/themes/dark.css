@@ -1,0 +1,43 @@
+:root {
+  --text: #fff;
+  --bg-100: #414141;
+  --bg-200: #515151;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.logo {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.comments__expandBtn__label {
+  color: #fff
+}
+.spinner:after {
+  border: 3px solid #fff;
+  border-color: #fff transparent #fff transparent;
+}
+
+.badge {
+  background-color: var(--bg-100);
+}
+
+.streamOffline {
+  background-color: var(--purple) !important;
+}
+
+select {
+  color: #fff;
+}
+
+code {
+  background-color: #616161 !important;
+  color: white !important;
+}
+
+.warningBox {
+  color: #000;
+}

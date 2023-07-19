@@ -1,0 +1,89 @@
+main {
+  margin: 0 28vw
+}
+
+label {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.selectOpt {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.sbSectionText {
+  margin-top: -0.75em;
+}
+
+select {
+  background-color: var(--bg-100);
+  border: none;
+  font-size: 14px;
+  padding: 0 5px;
+  border-radius: 5px;
+  height: 2em;
+  cursor: pointer;
+}
+
+.switchWrapper {
+  margin: 0.75em 0 0.75em;
+}
+
+@media only screen and (max-width: 812px) {
+  main {
+    margin: 0
+  }
+}
+
+ .switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 1.5em;
+}
+
+.switch input {
+  visibility: hidden;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-100);
+  -webkit-transition: .15s;
+  transition: .15s;
+  border-radius: 1em;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1em;
+  width: 1em;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  -webkit-transition: .25s;
+  transition: .25s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--accent);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(1em);
+  -ms-transform: translateX(1em);
+  transform: translateX(1em);
+}
