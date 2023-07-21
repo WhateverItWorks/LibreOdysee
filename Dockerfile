@@ -8,6 +8,5 @@ COPY go.mod ./
 COPY go.sum ./
 RUN go mod download
 COPY ./ /app
-RUN go build -o /LibreOdysee
 EXPOSE 3000
 CMD ["/app/LibreOdysee"]
