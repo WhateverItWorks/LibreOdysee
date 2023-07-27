@@ -2,9 +2,10 @@ version: '3.7'
 
 services:
   libreodysee:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    #build:
+      #context: .
+      #dockerfile: Dockerfile
+    image: codeberg.org/librarian/librarian:latest
     container_name: libreodysee
     hostname: libreodysee
     restart: always
