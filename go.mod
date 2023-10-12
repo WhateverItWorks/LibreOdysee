@@ -11,7 +11,7 @@ require (
 	github.com/gofiber/fiber/v2 v2.49.2
 	github.com/gofiber/template v1.8.2
 	github.com/hashicorp/go-retryablehttp v0.7.4
-	github.com/microcosm-cc/bluemonday v1.0.25
+	github.com/microcosm-cc/bluemonday v1.0.26
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/pelletier/go-toml v1.9.5 // indirect
 	github.com/spf13/viper v1.17.0
