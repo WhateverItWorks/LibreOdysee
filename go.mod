@@ -9,7 +9,7 @@ require (
 	github.com/aymerick/raymond v2.0.2+incompatible
 	github.com/dustin/go-humanize v1.0.1
 	github.com/gofiber/fiber/v2 v2.52.1
-	github.com/gofiber/template v1.8.2
+	github.com/gofiber/template v1.8.3
 	github.com/hashicorp/go-retryablehttp v0.7.5
 	github.com/microcosm-cc/bluemonday v1.0.26
 	github.com/patrickmn/go-cache v2.1.0+incompatible
