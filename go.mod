@@ -4,7 +4,7 @@ go 1.16
 
 require (
 	codeberg.org/librarian/feeds v1.1.1
-	github.com/PuerkitoBio/goquery v1.9.1
+	github.com/PuerkitoBio/goquery v1.9.2
 	github.com/andybalholm/brotli v1.1.0
 	github.com/aymerick/raymond v2.0.2+incompatible
 	github.com/dustin/go-humanize v1.0.1
