@@ -8,7 +8,7 @@ require (
 	github.com/andybalholm/brotli v1.1.0
 	github.com/aymerick/raymond v2.0.2+incompatible
 	github.com/dustin/go-humanize v1.0.1
-	github.com/gofiber/fiber/v2 v2.52.4
+	github.com/gofiber/fiber/v2 v2.52.5
 	github.com/gofiber/template v1.8.3
 	github.com/hashicorp/go-retryablehttp v0.7.5
 	github.com/microcosm-cc/bluemonday v1.0.26
