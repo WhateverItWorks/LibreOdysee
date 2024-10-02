@@ -1,5 +1,5 @@
 # Golang docker: https://hub.docker.com/_/golang
-FROM golang:1.22.5-alpine
+FROM golang:1.23.2-alpine
 RUN apk add musl-dev
 RUN apk add libc-dev
 RUN apk add gcc
