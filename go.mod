@@ -3,7 +3,7 @@ module github.com/V4NT-ORG/LibreOdysee
 go 1.24.0
 
 require (
-	codeberg.org/librarian/feeds v1.1.1
+	github.com/LibreOdysee/feeds v1.1.1
 	github.com/PuerkitoBio/goquery v1.9.2
 	github.com/andybalholm/brotli v1.1.0
 	github.com/aymerick/raymond v2.0.2+incompatible
