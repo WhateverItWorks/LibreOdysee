@@ -20,7 +20,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/etag"
 	"github.com/gofiber/fiber/v2/middleware/filesystem"
 	"github.com/gofiber/fiber/v2/middleware/recover"
-	"github.com/gofiber/template/handlebars"
+	"github.com/gofiber/template/handlebars/v2"
 	"github.com/microcosm-cc/bluemonday"
 	"github.com/spf13/viper"
 )
