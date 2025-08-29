@@ -383,8 +383,8 @@ cloud.google.com/go/workflows v1.6.0/go.mod h1:6t9F5h/unJz41YqfBmqSASJSXccBLtD1V
 cloud.google.com/go/workflows v1.7.0/go.mod h1:JhSrZuVZWuiDfKEFxU0/F1PQjmpnpcoISEXH2bcHC3M=
 cloud.google.com/go/workflows v1.8.0/go.mod h1:ysGhmEajwZxGn1OhGOGKsTXc5PyxOc0vfKf5Af+to4M=
 cloud.google.com/go/workflows v1.9.0/go.mod h1:ZGkj1aFIOd9c8Gerkjjq7OW7I5+l6cSvT3ujaO/WwSA=
-codeberg.org/librarian/feeds v1.1.1 h1:J6/kAXDsJvUGJkQo+mi9fHalWzFZGMYuEen3eOwERoI=
-codeberg.org/librarian/feeds v1.1.1/go.mod h1:0ctrTFP23O8tPj1DAaURrVu4h+FLUYw/SvioVWeKh1w=
+github.com/gorilla/feeds v1.1.1 h1:J6/kAXDsJvUGJkQo+mi9fHalWzFZGMYuEen3eOwERoI=
+github.com/gorilla/feeds v1.1.1/go.mod h1:0ctrTFP23O8tPj1DAaURrVu4h+FLUYw/SvioVWeKh1w=
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
